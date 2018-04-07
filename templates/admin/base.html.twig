@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{% block title %}pti4ka-neveli4ka.ru{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('admin-area/build/css/admin.css') }}">
+        <link rel="stylesheet" href="{{ asset('dashboard/build/css/admin.css') }}">
     {% endblock %}
 
 </head>
@@ -39,7 +39,7 @@
 
                             {% if is_granted('ROLE_USER') %}
                                 <li>
-                                    <a href="">
+                                    <a href="">is_granted('ROLE_USER')
                                         <i class="fa fa-lock" aria-hidden="true"></i>
                                     </a>
                                 </li>
