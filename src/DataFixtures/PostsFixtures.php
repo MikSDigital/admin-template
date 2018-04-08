@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Category;
 use App\Entity\Post;
 use App\Entity\Tag;
 use App\Utils\Slugger;
@@ -12,8 +13,23 @@ class PostsFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+        $this->loadCategories($manager);
         $this->loadTags($manager);
         $this->loadPosts($manager);
+    }
+
+    private function loadCategories(ObjectManager $manager)
+    {
+        $aNames = ['Детям', 'Родителям', 'Для всей семьи'];
+
+        foreach ($aNames as $sName) {
+            $category = new Category();
+            $category->setName($sName);
+
+            $manager->persist($category);
+        }
+
+        $manager->flush();
     }
 
     private function loadPosts(ObjectManager $manager)

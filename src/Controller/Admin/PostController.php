@@ -20,9 +20,9 @@ class PostController extends Controller
      */
     public function index(PostRepository $posts): Response
     {
-            $allPosts = $posts->findAll();
+        $allPosts = $posts->findAll();
 
-        return $this->render('admin/index.html.twig', [
+        return $this->render('admin/partials/posts.html.twig', [
             'email' => $this->getUser() ? $this->getUser()->getUsername() : '',
             'posts' => $allPosts
         ]);
