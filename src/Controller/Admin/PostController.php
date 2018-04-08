@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
  * @Security("is_granted('ROLE_USER')")
  */
 
-class AdminController extends Controller
+class PostController extends Controller
 {
     /**
      * @Route("/", name="index")

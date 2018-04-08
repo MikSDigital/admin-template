@@ -50,6 +50,12 @@ class Post
      */
     private $tags;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="posts")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $category;
+
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
